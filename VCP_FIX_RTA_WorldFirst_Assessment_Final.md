@@ -1,20 +1,22 @@
+> **Historical material — publication correction, 2026-11-02.** This is an archived AI-assisted research compilation, not an independent assessment or a current priority claim. AI research tools are not independent reviewers. The historical confidence, source counts, consensus labels and “world-first” conclusions below have not been independently substantiated and must not be used as current assurances. The current README describes implementation and verification limits.
+
 # VCP FIX RTA Reference Implementation
-# World-First Claim Independent Assessment Report
+# Historical World-First Claim — AI-Assisted Research Report
 
 **Document ID:** VSO-EVIDENCE-FIX-004  
 **Assessment Date:** 6 January 2026  
 **Version:** 4.0 Final (Multi-System Consolidated)  
-**Classification:** Public  
+**Classification:** Historical AI-assisted compilation; not current substantiation
 
 ---
 
 ## Executive Summary
 
-This report consolidates independent assessments from **five leading AI research systems** evaluating whether the VeritasChain Protocol (VCP) FIX RTA Reference Implementation constitutes a "world-first" public release for cryptographic audit trails in FIX Protocol–based trading systems.
+This report consolidates AI-assisted research outputs from **five AI research tools or runs, not independent reviewers** evaluating whether the VeritasChain Protocol (VCP) FIX RTA Reference Implementation constitutes a "world-first" public release for cryptographic audit trails in FIX Protocol–based trading systems.
 
 ### Unanimous Conclusion
 
-| Independent Research System | Conclusion | Confidence Level |
+| AI Research Tool / Run | Conclusion | Confidence Level |
 |----------------------------|------------|------------------|
 | System A | Likely world-first | High |
 | System B | Likely world-first | High |
@@ -23,7 +25,7 @@ This report consolidates independent assessments from **five leading AI research
 | System E | Likely world-first (認定) | High |
 | **CONSENSUS** | **Likely world-first** | **High** |
 
-**All five independent research systems reached the identical conclusion:** No publicly available work before 6 January 2026 demonstrates ALL required elements together for FIX-based trading systems.
+**All five AI research tools (not independent reviewers) reached the identical conclusion:** No publicly available work before 6 January 2026 demonstrates ALL required elements together for FIX-based trading systems.
 
 ### Combined Research Scope
 
@@ -32,7 +34,7 @@ This report consolidates independent assessments from **five leading AI research
 | Total Sources Analyzed | 500+ |
 | Languages Covered | English, Japanese, Chinese, Russian, Turkish |
 | Domains Searched | Academic, Patents, GitHub, Industry, Regulatory |
-| Independent Assessors | 5 |
+| AI Research Tools / Runs | 5 |
 | Consensus Rate | 100% (5/5) |
 
 ---
@@ -348,7 +350,7 @@ The repository serves as the reference implementation for:
 
 ### 8.1 Final Assessment
 
-The VCP FIX RTA Reference Implementation is **unanimously assessed by five independent research systems as likely the first publicly available, reproducible FIX Protocol cryptographic audit evidence pack**.
+The VCP FIX RTA Reference Implementation is **unanimously assessed by five AI research tools (not independent reviewers) as likely the first publicly available, reproducible FIX Protocol cryptographic audit evidence pack**.
 
 ### 8.2 Basis for Conclusion
 
@@ -381,11 +383,11 @@ The VCP FIX RTA Reference Implementation is **unanimously assessed by five indep
 
 ### 9.2 Conservative Claim
 
-> "Following comprehensive due diligence across 500+ sources by five independent research systems, no prior publicly available implementation combining cryptographically verifiable audit trails, Merkle-tree-based completeness guarantees, independent third-party verifiability, and explicit FIX message field mapping was identified before January 6, 2026."
+> "Following comprehensive due diligence across 500+ sources by five AI research tools (not independent reviewers), no prior publicly available implementation combining cryptographically verifiable audit trails, Merkle-tree-based completeness guarantees, independent third-party verifiability, and explicit FIX message field mapping was identified before January 6, 2026."
 
 ### 9.3 Multi-System Attestation Statement
 
-> "Five independent research systems unanimously concluded with high confidence that the VCP FIX RTA Reference Implementation represents the first publicly available, reproducible FIX Protocol cryptographic audit evidence pack with Merkle tree completeness guarantees, explicit FIX-to-VCP field mapping, and independent third-party verification scripts."
+> "Five AI research tools (not independent reviewers) unanimously concluded with high confidence that the VCP FIX RTA Reference Implementation represents the first publicly available, reproducible FIX Protocol cryptographic audit evidence pack with Merkle tree completeness guarantees, explicit FIX-to-VCP field mapping, and independent third-party verification scripts."
 
 ---
 
@@ -421,11 +423,11 @@ The VCP FIX RTA Reference Implementation is **unanimously assessed by five indep
 | Document ID | VSO-EVIDENCE-FIX-004 |
 | Version | 4.0 Final |
 | Assessment Date | 6 January 2026 |
-| Independent Assessors | 5 |
-| Methodology | Multi-system independent research, consolidated analysis |
+| AI Research Tools / Runs | 5 |
+| Methodology | AI-assisted research, consolidated analysis; no independent review |
 | Total Sources | 500+ |
 | Confidence Level | High (Unanimous Consensus) |
-| Classification | Public |
+| Classification | Historical AI-assisted compilation; not current substantiation |
 
 ---
 
