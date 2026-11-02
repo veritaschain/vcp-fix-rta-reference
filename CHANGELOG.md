@@ -2,6 +2,12 @@
 
 All notable changes to the VCP FIX Evidence Pack structure are documented here.
 
+## Publication correction — 2026-11-02
+
+- Label the WorldFirst report as historical AI-assisted research, not an independent assessment or current priority claim.
+- The current verifier reports local consistency only; unauthenticated packs remain `INDETERMINATE`, and observed mismatches are `INVALID`. Earlier compliance and production claims below are historical, not current findings.
+- Preserve the original file manifest under `archive/` and regenerate the current checksum inventory after the verifier/README repair. Neither manifest authenticates origin or establishes conformity.
+
 ## [1.1.0] - 2025-01-06
 
 ### Added
