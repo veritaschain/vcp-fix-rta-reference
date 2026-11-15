@@ -12,7 +12,15 @@ The original output in `examples/verify_expected.txt` is retained as a historica
 
 ```bash
 python verify.py
+
+# Inspect another local pack without copying or changing any files:
+python verify.py /path/to/evidence
 ```
+
+The default is the directory containing `verify.py`, regardless of the working
+directory. An explicit directory selects that pack; unavailable files remain
+`INDETERMINATE`. Unknown options or extra arguments are rejected with usage text
+and exit code 2. `--help` prints the usage text and exits 0 without inspecting evidence.
 
 For the unchanged bundled pack, the current result is:
 
@@ -53,7 +61,7 @@ Only `events.json`, `batches.json` and `anchors.json` are read by the verifier.
 - Bind ordered batch membership and declared counts to the non-control event stream, and rebuild each supported Merkle root.
 - Bind each supplied inclusion proof to the event ID/hash, batch root, leaf index and batch size; reject wrong directions, wrong paths, and unrelated proofs. A missing proof-level `TreeSize` is derived from the checked batch membership.
 - Compare local anchor references, roots and counts with the corresponding batch. Matching an anchor JSON field does **not** validate a timestamp or an external receipt.
-- Reject malformed JSON, duplicate JSON members, non-finite JSON numbers, malformed hashes and invalid proof structure. Missing evidence cannot yield success.
+- Reject malformed JSON, duplicate JSON members, non-finite JSON numbers (including decimal exponents that overflow the supported floating-point range), malformed hashes and invalid proof structure. Missing evidence cannot yield success.
 
 These checks describe this legacy file layout. They do not amend a VCP specification, implement all VCP requirements, or prove that the supplied event population includes every real-world event. Multi-batch anchor interpretation and unsupported algorithms remain indeterminate.
 

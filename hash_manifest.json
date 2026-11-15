@@ -1,10 +1,10 @@
 {
   "schema_version": "2.0",
-  "updated_on": "2026-11-02",
+  "updated_on": "2026-11-15",
   "algorithm": "SHA-256",
   "scope": "Unsigned checksum inventory of the listed current repository files; not origin, signature, anchor, conformance or production verification.",
   "historical_manifest": "archive/hash_manifest.pre-2026-11-02.json",
-  "file_count": 28,
+  "file_count": 29,
   "files": {
     ".github/workflows/verification-regression.yml": {
       "sha256": "193daf09c95ce734f79ee0cb89222fe0e60c2fe3283a4c9ade55c172318b3a26",
@@ -19,8 +19,8 @@
       "size_bytes": 2224
     },
     "README.md": {
-      "sha256": "ac70295c0ab9639c3df742aa321d2c7e6510ff648756fabdbc99951c44982555",
-      "size_bytes": 7130
+      "sha256": "6e4cc52086be800849c51df303c162578ce98b0979dcb807359e0e6372c9d432",
+      "size_bytes": 7640
     },
     "STATUS-2026-10-25.md": {
       "sha256": "6b05a0cd83724aa1f8d24a1d98c74f618f287a7d304860c371a46bee3ad4f916",
@@ -102,9 +102,13 @@
       "sha256": "c72a8cb44d6f841ed4f9ebde3d9a6e0ac0e9e90f242c9c1dbcf6c7ebb0768ce2",
       "size_bytes": 12042
     },
+    "tests/test_input_boundary.py": {
+      "sha256": "5242931fe1afd943634152aa0788c8c049d1f2d841792e132bfe81f1c05ae769",
+      "size_bytes": 4033
+    },
     "tools/update_hash_manifest.py": {
-      "sha256": "f40bf98ede66f2f28a74cdfe5816753e4f5ffda9b83e3ca5a9544a72d219bf77",
-      "size_bytes": 1579
+      "sha256": "a4201eab781b63f92601b67106b7712ff5f08ac896a42e23c759a39773af369b",
+      "size_bytes": 1617
     },
     "verifier_outputs/verification_report.json": {
       "sha256": "d4a58f3a817bfc41cc6ffded229491de5a55ea39f5403cd8a7a7ca6b99003447",
@@ -115,8 +119,8 @@
       "size_bytes": 2721
     },
     "verify.py": {
-      "sha256": "d5dd7a234526392a754edf877e85bd9d49ba4ab9c837e65f461b057ee3ac1d0f",
-      "size_bytes": 15618
+      "sha256": "628dd8ca16a13933ab5d3950743cd8db9ea95203a7a7a1435fa407170b137dd4",
+      "size_bytes": 16378
     }
   },
   "excluded_from_manifest": [

@@ -10,8 +10,10 @@ License: Apache 2.0
 Copyright (c) 2025 VeritasChain Standards Organization
 """
 
+import argparse
 import hashlib
 import json
+import math
 import re
 from dataclasses import dataclass
 from datetime import datetime
@@ -137,6 +139,13 @@ def _reject_constant(value: str) -> None:
     raise ValueError('non-finite JSON number: ' + value)
 
 
+def _finite_float(value: str) -> float:
+    number = float(value)
+    if not math.isfinite(number):
+        raise ValueError('JSON number exceeds the supported finite range')
+    return number
+
+
 def _inspect(evidence_dir: Path) -> VerificationResult:
     errors, gaps, messages = [], [], ['Legacy VCP evidence pack — local consistency only']
     data: Dict[str, list] = {}
@@ -144,7 +153,8 @@ def _inspect(evidence_dir: Path) -> VerificationResult:
         try:
             with (evidence_dir / (name + '.json')).open(encoding='utf-8') as source:
                 doc = json.load(source, object_pairs_hook=_unique_object,
-                                parse_constant=_reject_constant)
+                                parse_constant=_reject_constant,
+                                parse_float=_finite_float)
             if not isinstance(doc, dict):
                 raise ValueError('top-level JSON must be an object')
             values = doc.get(name, [])
@@ -331,5 +341,15 @@ def main(evidence_dir: Optional[Path] = None) -> int:
     return {VALID: 0, INVALID: 1, INDETERMINATE: 2}[result.status]
 
 
+def cli(argv: Optional[List[str]] = None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('evidence_dir', nargs='?', type=Path,
+                        default=Path(__file__).resolve().parent,
+                        help='directory containing events.json, batches.json and anchors.json '
+                             '(default: directory containing this script)')
+    args = parser.parse_args(argv)
+    return main(args.evidence_dir)
+
+
 if __name__ == '__main__':
-    raise SystemExit(main())
+    raise SystemExit(cli())
