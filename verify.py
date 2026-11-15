@@ -290,6 +290,8 @@ def _inspect(evidence_dir: Path) -> VerificationResult:
     for event in control_events:
         try:
             governance = event['Governance']
+            if 'EventCount' in governance and type(governance['EventCount']) is not int:
+                raise ValueError('control event count must be an integer')
             is_batch = event['Header']['EventType'] == 'VCP_BATCH'
             record = ((batch_by_id if is_batch else anchor_by_id)
                       .get(governance['BatchID' if is_batch else 'AnchorID']))
@@ -299,7 +301,7 @@ def _inspect(evidence_dir: Path) -> VerificationResult:
                 for field in ('MerkleRoot', 'EventCount', 'AnchorTarget'):
                     if field in governance and field in record and governance[field] != record[field]:
                         errors.append('control event disagrees with its record: ' + field)
-        except (KeyError, TypeError, AttributeError) as exc:
+        except (KeyError, TypeError, ValueError, AttributeError) as exc:
             errors.append('malformed control event: ' + str(exc))
 
     messages.extend('INVALID: ' + error for error in errors)

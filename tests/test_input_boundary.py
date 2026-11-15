@@ -6,7 +6,7 @@ import sys
 import tempfile
 import unittest
 
-from test_fail_closed import synthetic_pack
+from test_fail_closed import event_digest, synthetic_pack
 import verify
 
 
@@ -42,6 +42,29 @@ class InputBoundaryTests(unittest.TestCase):
     def test_finite_exponent_metadata_is_supported(self):
         path = self.root / 'anchors.json'
         path.write_text(path.read_text().replace('{', '{"metadata":1e100,', 1), encoding='utf-8')
+        result = verify.verify_evidence_pack_result(self.root)
+        self.assertEqual(result.status, verify.INDETERMINATE)
+        self.assertTrue(result.local_checks_passed)
+
+    def test_control_event_count_requires_an_integer_when_present(self):
+        for value in (3.0, True, '3', None):
+            with self.subTest(value=value):
+                pack = synthetic_pack()
+                event = pack['events']['events'][-1]
+                event['Governance']['EventCount'] = value
+                event['Header']['EventHash'] = event_digest(event)
+                self.write(pack)
+                result = verify.verify_evidence_pack_result(self.root)
+                self.assertEqual(result.status, verify.INVALID)
+                self.assertFalse(result.local_checks_passed)
+                self.assertIn('control event count must be an integer', '\n'.join(result.messages))
+
+    def test_control_event_integer_count_can_match(self):
+        pack = synthetic_pack()
+        event = pack['events']['events'][-1]
+        event['Governance']['EventCount'] = 3
+        event['Header']['EventHash'] = event_digest(event)
+        self.write(pack)
         result = verify.verify_evidence_pack_result(self.root)
         self.assertEqual(result.status, verify.INDETERMINATE)
         self.assertTrue(result.local_checks_passed)

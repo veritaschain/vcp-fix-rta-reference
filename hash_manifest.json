@@ -7,7 +7,7 @@
   "file_count": 29,
   "files": {
     ".github/workflows/verification-regression.yml": {
-      "sha256": "193daf09c95ce734f79ee0cb89222fe0e60c2fe3283a4c9ade55c172318b3a26",
+      "sha256": "99c01564d581907dbd441df632a9d699cfd7bb411e4749bc5e0825082bee7a27",
       "size_bytes": 568
     },
     "CHANGELOG.md": {
@@ -103,8 +103,8 @@
       "size_bytes": 12042
     },
     "tests/test_input_boundary.py": {
-      "sha256": "5242931fe1afd943634152aa0788c8c049d1f2d841792e132bfe81f1c05ae769",
-      "size_bytes": 4033
+      "sha256": "b8e7b2c8cc8e5614d804d2f4680018e2d6c6f80446e83c16865c09a5733277d9",
+      "size_bytes": 5200
     },
     "tools/update_hash_manifest.py": {
       "sha256": "a4201eab781b63f92601b67106b7712ff5f08ac896a42e23c759a39773af369b",
@@ -119,8 +119,8 @@
       "size_bytes": 2721
     },
     "verify.py": {
-      "sha256": "628dd8ca16a13933ab5d3950743cd8db9ea95203a7a7a1435fa407170b137dd4",
-      "size_bytes": 16378
+      "sha256": "1004fa205c78aa283788365242954d3a3eb381a342624f1110e4576b34abc808",
+      "size_bytes": 16554
     }
   },
   "excluded_from_manifest": [
