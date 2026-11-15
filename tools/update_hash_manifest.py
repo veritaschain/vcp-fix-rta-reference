@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Regenerate an unsigned current-source checksum inventory; no evidence signing."""
 import argparse
+from datetime import date
 import hashlib
 import json
 from pathlib import Path
@@ -21,7 +22,7 @@ for relative in paths:
     files[relative] = {'sha256': hashlib.sha256(content).hexdigest(), 'size_bytes': len(content)}
 manifest = {
     'schema_version': '2.0',
-    'updated_on': '2026-11-02',
+    'updated_on': date.today().isoformat(),
     'algorithm': 'SHA-256',
     'scope': 'Unsigned checksum inventory of the listed current repository files; not origin, signature, anchor, conformance or production verification.',
     'historical_manifest': 'archive/hash_manifest.pre-2026-11-02.json',
